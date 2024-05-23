@@ -1,0 +1,40 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="my_bar">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'img/icono.png' %}" alt="Icono" width="30" height="30">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'categoria:categoria_lista' %}">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'productos:producto_lista' %}">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'etiqueta:etiqueta_lista' %}">Etiquetas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'perfil:perfil_detalle' %}">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <form method="post" action="{% url 'autenticacion:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-link navbar-item btn" style="border: none; padding: 0; background: none; cursor: pointer;">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'autenticacion:signup' %}">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-item btn" href="{% url 'autenticacion:login' %}">Iniciar Sesión</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

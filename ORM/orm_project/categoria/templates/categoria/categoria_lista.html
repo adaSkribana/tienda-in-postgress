@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Categorías</h2>
+<a href="{% url 'categoria:categoria_crear' %}" class="btn btn-primary mb-3">Crear Nueva Categoría</a>
+<div class="card-columns">
+    {% for categoria in categorias %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ categoria.nombre }}</h5>
+            <p class="card-text">{{ categoria.descripcion }}</p>
+            <a href="{% url 'categoria:categoria_detalle' categoria.pk %}" class="btn btn-info">Ver Detalles</a>
+            <a href="{% url 'categoria:categoria_editar' categoria.pk %}" class="btn btn-warning">Editar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

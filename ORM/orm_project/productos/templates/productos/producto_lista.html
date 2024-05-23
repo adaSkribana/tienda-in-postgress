@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Productos</h2>
+<a href="{% url 'productos:producto_crear' %}" class="btn btn-primary mb-3">Crear Nuevo Producto</a>
+<div class="card-columns">
+    {% for producto in productos %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text">{{ producto.descripcion }}</p>
+            <a href="{% url 'productos:producto_detalle' producto.pk %}" class="btn btn-info">Ver Detalles</a>
+            <a href="{% url 'productos:producto_editar' producto.pk %}" class="btn btn-warning">Editar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

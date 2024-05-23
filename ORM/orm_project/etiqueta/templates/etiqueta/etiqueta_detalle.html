@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ etiqueta.nombre }}</h5>
+                    <a href="{% url 'etiqueta:etiqueta_editar' etiqueta.pk %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'etiqueta:etiqueta_lista' %}" class="btn btn-secondary">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

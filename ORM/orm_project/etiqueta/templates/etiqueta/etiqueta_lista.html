@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Etiquetas</h2>
+<a href="{% url 'etiqueta:etiqueta_crear' %}" class="btn btn-primary mb-3">Crear Nueva Etiqueta</a>
+<div class="card-columns">
+    {% for etiqueta in etiquetas %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ etiqueta.nombre }}</h5>
+            <p class="card-text">{{ etiqueta.descripcion }}</p>
+            <a href="{% url 'etiqueta:etiqueta_detalle' etiqueta.pk %}" class="btn btn-info">Ver Detalles</a>
+            <a href="{% url 'etiqueta:etiqueta_editar' etiqueta.pk %}" class="btn btn-warning">Editar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

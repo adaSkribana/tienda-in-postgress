@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Administración</h2>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{% url 'categoria:categoria_lista' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Categorías</h5>
+                            <p class="mb-1">Administrar la lista de categorías, editar o añadir nuevas.</p>
+                        </a>
+                        <a href="{% url 'productos:producto_lista' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Productos</h5>
+                            <p class="mb-1">Ver y editar la lista de productos disponibles.</p>
+                        </a>
+                        <a href="{% url 'etiqueta:etiqueta_lista' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Etiquetas</h5>
+                            <p class="mb-1">Gestionar las etiquetas de los productos.</p>
+                        </a>
+                        <a href="{% url 'perfil:perfil_detalle' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Perfil</h5>
+                            <p class="mb-1">Editar la información del perfil del usuario.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

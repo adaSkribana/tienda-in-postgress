@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ categoria.nombre }}</h5>
+                    <a href="{% url 'categoria:categoria_editar' categoria.pk %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'categoria:categoria_lista' %}" class="btn btn-secondary">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
