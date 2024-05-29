@@ -60,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'static/templates/',
+            BASE_DIR / 'templates/',
             BASE_DIR / 'categoria/templates/categoria/',
             BASE_DIR / 'etiqueta/templates/etiqueta/',
             BASE_DIR / 'perfil/templates/perfil/',
@@ -141,5 +141,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 # settings.py
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Descomenta esta línea al hacer el despliegue en producción
+STATIC_ROOT = BASE_DIR / 'static'  # Descomenta esta línea al hacer el despliegue en producción
 LOGOUT_REDIRECT_URL = 'autenticacion:login'  # Redirige a la página de inicio de sesión después del logout
